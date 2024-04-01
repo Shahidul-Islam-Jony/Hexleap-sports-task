@@ -65,12 +65,12 @@ const Sports = () => {
         },
     ]
     return (
-        <div>
-            <h3 className="text-lg font-bold border-b-4 w-fit pt-10 ml-7 mb-4 border-blue-500">Sports</h3>
-            <div className="grid grid-cols-10">
+        <div className="">
+            <h3 className="text-lg font-bold border-b-4 w-fit pt-10 lg:ml-7 mb-4 border-blue-500">Sports</h3>
+            <div className="grid md:grid-cols-6 lg:grid-cols-10">
                 {/* players */}
-                <div className="col-span-8">
-                    <div className="grid grid-cols-4 flex-1 gap-4 justify-center p-4">
+                <div className="md:col-span-4 ml-2 lg:col-span-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 flex-1 gap-4 justify-center lg:p-4">
                         {
                             players.slice(0, !isShow ? 4 : players.length).map(player => <div className="shadow-lg" key={player.id}>
                                 <Image src={player.img} width={1000} height={1000} className="w-full h-96 border-8 rounded-t-md border-white" alt="playerImg"></Image>
@@ -89,10 +89,10 @@ const Sports = () => {
                     </div>
                 </div>
                 {/* Ad */}
-                <div className="col-span-2 mt-4 relative bg-white h-[510px] p-2 border-2">
-                    <div className="border-2 border-green-300 pb-5">
+                <div className="rounded-md md:ml-4 lg:ml-0 md:col-span-2 lg:mt-4 relative bg-white h-[510px] p-2 border-2">
+                    <div className="border-2 border-green-300 md:pb-3 lg:pb-5">
                         <Image src='/adds.jpeg' className="w-full" width={1000} height={1000} alt="ads"></Image>
-                        <span className="bg-black text-white px-6 py-2 absolute top-2 right-2">Ad</span>
+                        <span className="bg-black text-white px-6 py-2 absolute m-0.5 top-2 right-2">Ad</span>
                         <h3 className="font-bold text-lg mt-4 px-2">Advertisement title</h3>
                         <p className="px-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro eum esse vitae quasi reprehenderit ut assumenda officia magnam! Ad architecto voluptatum ratione libero est nam veniam facilis dese.</p>
                     </div>
