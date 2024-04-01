@@ -65,26 +65,34 @@ const Sports = () => {
         },
     ]
     return (
-        <div className="grid grid-cols-10">
-            {/* players */}
-            <div className="col-span-8">
-                <div className="flex gap-4 justify-center p-4">
-                    {
-                        players.slice(0,!isShow? 4: players.length).map(player => <div key={player.id}>
-                            <Image src={player.img} width={1000} height={1000} className="w-56 h-96 border-8 rounded-t-md border-white" alt="playerImg"></Image>
-                            <p className="border-8 font-medium border-white bg-white">{player.title}</p>
-                            <div className="flex justify-between border-8 rounded-t-md border-white p-2">
-                                <p>Total Events <br /> <span>{player.events} Events</span></p>
-                                <p>Sport <br /> <span>{player.sport}</span></p>
-                            </div>
-                        </div>)
-                    }
+        <div>
+            <h3 className="text-lg font-bold border-b-4 w-fit pt-10 ml-7 mb-4 border-blue-500">Sports</h3>
+            <div className="grid grid-cols-10">
+                {/* players */}
+                <div className="col-span-8">
+                    <div className="grid grid-cols-4 gap-4 justify-center p-4">
+                        {
+                            players.slice(0, !isShow ? 4 : players.length).map(player => <div className="shadow-lg" key={player.id}>
+                                <Image src={player.img} width={1000} height={1000} className="w-56 h-96 border-8 rounded-t-md border-white" alt="playerImg"></Image>
+                                <p className="border-8 font-medium text-lg border-white bg-white">{player.title}</p>
+                                <div className="flex justify-between border-8 rounded-b-md border-white p-2 bg-gray-100">
+                                    <p><span className="text-gray-600">Total Events</span> <br /> <span className="font-medium">{player.events} Events</span></p>
+                                    <p><span className="text-gray-600">Sport</span> <br /> <span className="font-medium">{player.sport}</span></p>
+                                </div>
+                            </div>)
+                        }
+                    </div>
+                    <div className="flex justify-center mt-4">
+                        {
+                            isShow ? <button onClick={()=>setIsShow(false)} className="btn bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Show Less</button> : <button onClick={()=>setIsShow(true)} className="btn bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Show More</button>
+                        }
+                    </div>
                 </div>
-            </div>
-            {/* Ad */}
-            <div className="col-span-2 mt-4">
-                <Image src='/adds.jpeg' className="w-full p-2 relative" width={1000} height={1000} alt="ads"></Image>
-                <span className="bg-black text-white px-6 py-2 absolute top-6 right-20">Ad</span>
+                {/* Ad */}
+                <div className="col-span-2 mt-4">
+                    <Image src='/adds.jpeg' className="w-full rounded-t-md border-8 border-white relative" width={1000} height={1000} alt="ads"></Image>
+                    <span className="bg-black text-white px-6 py-2 absolute top-28 right-16">Ad</span>
+                </div>
             </div>
         </div>
     );
