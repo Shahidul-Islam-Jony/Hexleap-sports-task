@@ -2,9 +2,12 @@
 import { PlayersType } from "@/types/type";
 import Image from "next/image";
 import { useState } from "react";
+import { GiMoon } from "react-icons/gi";
+import { IoSunnySharp } from "react-icons/io5";
 
 const Sports = () => {
     const [isShow, setIsShow] = useState(false);
+    const [darkMode,setDarkMode] = useState(false);
 
     const players: PlayersType[] = [
         {
@@ -64,9 +67,17 @@ const Sports = () => {
             img: "/player-7.jpeg",
         },
     ]
+
     return (
-        <div className="">
-            <h3 className="text-lg font-bold border-b-4 w-fit pt-10 lg:ml-7 mb-4 border-blue-500">Sports</h3>
+        <div>
+            <div className="flex justify-between">
+                <h3 className="text-lg font-bold border-b-4 w-fit pt-10 lg:ml-7 mb-4 border-blue-500">Sports</h3>
+                <label htmlFor="BasicSwitch_NavigateUI" className="relative mt-14 md:mr-5 flex h-fit w-10 items-center rounded-full border border-sky-600">
+                    <input type="checkbox" className="peer/toggle hidden" id="BasicSwitch_NavigateUI" />
+                    <div className="absolute inset-0 z-10 w-0 rounded-full duration-200 peer-checked/toggle:w-full peer-checked/toggle:bg-sky-200"><IoSunnySharp onClick={()=>setDarkMode(false)}/></div>
+                    <div className="z-20 size-4 rounded-full bg-sky-500 duration-200 peer-checked/toggle:translate-x-6"></div><GiMoon onClick={()=>setDarkMode(true)} className="ml-2"/>
+                </label>
+            </div>
             <div className="grid md:grid-cols-6 lg:grid-cols-10">
                 {/* players */}
                 <div className="md:col-span-4 ml-2 lg:col-span-8">
