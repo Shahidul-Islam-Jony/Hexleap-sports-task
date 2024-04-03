@@ -39,7 +39,7 @@ const Sports = ({ darkMode, setDarkMode }: SetDarkMode) => {
                 </div>
                 {/* Ad */}
                 <div className={`rounded-md md:ml-4 lg:ml-0 md:col-span-2 lg:mt-4 relative h-[510px] p-2  ${darkMode ? 'bg-gray-700' : ' bg-white'}`}>
-                    <div className={`border-2 md:pb-3 lg:pb-5 ${darkMode ? 'border-none' : 'border-green-300'}`}>
+                    <div className={`border-2 md:pb-1 ${darkMode ? 'border-none' : 'border-green-300'}`}>
                         <Image src='/adds.jpeg' className="w-full" width={1000} height={1000} alt="ads"></Image>
                         <span className="bg-black px-6 py-2 absolute m-0.5 top-2 right-2 text-white">Ad</span>
                         <h3 className={`font-bold text-lg mt-4 px-2 ${darkMode ? 'text-white' : 'text-black'}`}>Advertisement title</h3>

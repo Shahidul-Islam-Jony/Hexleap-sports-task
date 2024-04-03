@@ -26,7 +26,7 @@ const Slide = ({ darkMode, setDarkMode }: SetDarkMode) => {
                 },
             },
             {
-                breakpoint: 480,
+                breakpoint: 320,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
@@ -47,7 +47,7 @@ const Slide = ({ darkMode, setDarkMode }: SetDarkMode) => {
                         slideData.map(slide =>
 
                             <div key={slide.id} className="flex flex-col md:flex-row gap-2">
-                                <div className={`w-80 p-3 ${darkMode ? 'bg-gray-700 text-white' : 'bg-white'}`}>
+                                <div className={`w-40 md:w-80 p-3 ${darkMode ? 'bg-gray-700 text-white' : 'bg-white'}`}>
                                     <div className="border-b-2 relative border-gray-300 border-dashed pb-4">
                                         <Image src={slide.img} className="w-full h-96" width={1000} height={1000} alt="player" />
                                         <div className={`absolute w-6 h-6 -left-5 -bottom-3 rounded-full ${darkMode ? 'bg-gray-900' : 'bg-gray-200'}`}></div>
