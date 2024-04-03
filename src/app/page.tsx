@@ -12,7 +12,7 @@ export default function Home() {
         <Sports darkMode={darkMode} setDarkMode={setDarkMode}/>
       </div>
       <div className="w-11/12 mx-auto">
-        <Slide></Slide>
+        <Slide darkMode={darkMode} setDarkMode={setDarkMode}></Slide>
       </div>
     </main>
   );
