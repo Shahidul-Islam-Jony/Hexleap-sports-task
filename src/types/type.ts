@@ -5,3 +5,8 @@ export interface PlayersType{
     img:string,
     sport:string,
 }
+
+export interface SetDarkMode {
+    setDarkMode: (mode: boolean) => void;
+    darkMode: boolean;
+}
